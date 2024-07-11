@@ -1,0 +1,30 @@
+header{
+  display:flex;
+  align-items:center;
+  gap: 0.4em;
+  background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+  color: #FFF;
+  font-size: 1rem;
+  padding: 1.3125em 5.4vw 
+}
+
+header *{
+  margin: 0;
+}
+
+.header__title{
+  font-size: 1.3125em;
+  font-weight: 700;
+  font-family: Karla;
+  letter-spacing: -0.1em;
+}
+
+.header__image{
+  width: 1.9375em;
+}
+
+.header__project{
+  font-size: 0.875em;
+  margin-left: auto;
+  font-weight: 500;
+}
