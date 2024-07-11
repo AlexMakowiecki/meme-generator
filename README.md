@@ -129,7 +129,7 @@ This project was done to learn new concepts of React and practice the ones learn
           ```
         </details>
       - <details>
-          <summary>To know wich property to update, you have to use the same name for the property of your object, and the "name" attribute of your input</summary>
+          <summary>To know which property to update, you have to use the same name for the property of your object, and the "name" attribute of your input</summary>
         
           ```JSX
           function Main(){
@@ -223,5 +223,85 @@ This project was done to learn new concepts of React and practice the ones learn
           ```
         </details>         
     </details>
+  - <details>
+      <summary><b>Conditional rendering</b></summary>
+      <br/>
+
+      - You can set AND conditions for the elements to render, or OR conditions to select between two.
+      - You have to use short-circuit evaluation (&& or ||) to write the conditions.
+      - You can also use the conditional ternary operator ((cond) ? ifTrue:ifFalse).
+
+      <br/>
+      
+      ```JSX
+          function Main(){
+            const condition = false;
+            return (
+              {condition && <h1>Title</h1>}
+              {(condition) ? <h1>Title</h1> : <h1>Another title</h1>}
+            )
+          }      
+      ```  
+    </details>
+  - <details>
+      <summary><b>Side Effects</b></summary>
+      <br/>
+
+      - When a React component re-render, the code inside will run again. If you want a part of your code not to re-run each renderization, you can use React.useEffect()
+      - React.useEffect() will accept two parameters, one is a function containing your code, and the second is an array of "dependencies"
+      - These dependencies will be the variables you want React to follow. React will run the code inside the function whenever the value of these variables changes.
+      - If you don't provide an array of dependencies, the code inside your function will run every render.
+      - If you provide an empty array, the code inside your function will run only once.
+      - In the function you provide, you can also return another function. This function will act as a cleanup function to, for example, remove event listeners that you added off-side React.
+        - The cleanup function will run when the React Component is removed from the DOM.
+      - **Theory tip!** React.useEffect runs after render.
+
+      <br/>
+      
+      ```JSX
+        function Main(){
+          const [name, setName] = React.useState("a name");
+          const [age, setAge] = React.useState("an age")
+          
     
+          /* This will run every time name changes */
+          React.useEffect(
+            () => console.log("Name run"),
+            [name]
+          )
+
+          /* This will run every time age changes */
+          React.useEffect(
+            () => console.log("Age run"),
+            [age]
+          )
+
+          /* This will run only once */
+          React.useEffect(
+            () => console.log("Once run"),
+            []
+          )
+
+          /* Cleanup function example */
+
+          
+          React.useEffect(
+            () => {
+                    function randomEvent () {console.log("Random")}
+                    const clickButton = document.getElementById("click-button")
+                    clickButton.addEventListener("click", randomEvent)
+                    return (() => clickButton.removeEventListener(randomEvent))
+                  },
+            []
+          )
+          return (
+            <p>Name: {name}</p>
+            <p>Age: {age}</p>
+            <button id="click-button">Click!</button>
+          )
+        }      
+      ```  
+
+      
+    </details>
 
