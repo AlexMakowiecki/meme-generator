@@ -28,3 +28,10 @@ header *{
   margin-left: auto;
   font-weight: 500;
 }
+
+@media (min-width: 900px){
+  header{
+    font-size: 1.25rem;
+    margin-bottom: 1.5vw;
+  }
+}

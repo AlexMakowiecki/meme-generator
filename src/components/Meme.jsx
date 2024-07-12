@@ -64,8 +64,8 @@ export default function Meme() {
         <button className="meme__submit-button">Get a new meme image 🖼️</button>
       </form>
       <div className="meme__display">
-        <p className="meme__text meme__upper-text">{memeInfo.upperText}</p>
-        <p className="meme__text meme__bottom-text">{memeInfo.bottomText}</p>
+        <p className="meme__text meme__upper-text">{memeInfo.upperText || "shut up"}</p>
+        <p className="meme__text meme__bottom-text">{memeInfo.bottomText || "and take my money"}</p>
         <img className="meme__image" src={memeInfo.image}></img>
       </div>
     </div>
