@@ -2,7 +2,7 @@
 ## Introduction
 It's a website that gives you a random meme image whenever you press a button and lets you write a top phrase and a bottom phrase on that image.
 This project was done to learn new concepts of React and practice the ones learned previously. 
-### React concepts learned in the course
+## React concepts learned in the course
   - <details>
       <summary><b>Use of event listeners</b></summary>
       <br/>
@@ -284,10 +284,9 @@ This project was done to learn new concepts of React and practice the ones learn
 
           /* Cleanup function example */
 
-          
           React.useEffect(
             () => {
-                    function randomEvent () {console.log("Random")}
+                    const randomEvent = () => console.log("Random")
                     const clickButton = document.getElementById("click-button")
                     clickButton.addEventListener("click", randomEvent)
                     return (() => clickButton.removeEventListener(randomEvent))
@@ -304,4 +303,11 @@ This project was done to learn new concepts of React and practice the ones learn
 
       
     </details>
+## Preview
+![meme-generator](https://github.com/user-attachments/assets/cbfc903a-1bda-4047-bb95-9c9d7e3ecab0)
+## About Scrimba
+
+At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
+If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
+The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
 
