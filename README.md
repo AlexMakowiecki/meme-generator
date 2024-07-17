@@ -253,7 +253,7 @@ This project was done to learn new concepts of React and practice the ones learn
       - If you don't provide an array of dependencies, the code inside your function will run every render.
       - If you provide an empty array, the code inside your function will run only once.
       - In the function you provide, you can also return another function. This function will act as a cleanup function to, for example, remove event listeners that you added off-side React.
-        - The cleanup function will run when the React Component is removed from the DOM.
+        - The cleanup function will run in the next useEffect call (when the value of the dependency changes or the component is removed from DOM). 
       - **Theory tip!** React.useEffect runs after render.
 
       <br/>
